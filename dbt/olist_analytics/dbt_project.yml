@@ -35,6 +35,10 @@ models:
       +materialized: view
       +schema: staging
 
+    marts:
+      +materialized: table
+      +schema: marts
+
 # Configuration des données de référence
 seeds:
   olist_analytics:

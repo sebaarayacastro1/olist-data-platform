@@ -1,0 +1,47 @@
+
+version: 2
+
+models:
+  - name: dim_product
+    description: "Dimension des produits avec catégories en trois langues."
+
+    columns:
+      - name: product_id
+        description: "Identifiant unique du produit."
+        data_tests:
+          - unique
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_olist_products')
+                field: product_id
+
+      - name: category_name_pt
+        description: "Catégorie originale en portugais."
+
+      - name: category_name_en
+        description: "Catégorie traduite en anglais."
+
+      - name: category_name_fr
+        description: "Catégorie traduite en français."
+
+      - name: name_length
+        description: "Longueur du nom du produit."
+
+      - name: description_length
+        description: "Longueur de la description."
+
+      - name: photos_qty
+        description: "Nombre de photos du produit."
+
+      - name: weight_g
+        description: "Poids du produit en grammes."
+
+      - name: length_cm
+        description: "Longueur du produit."
+
+      - name: height_cm
+        description: "Hauteur du produit."
+
+      - name: width_cm
+        description: "Largeur du produit."
