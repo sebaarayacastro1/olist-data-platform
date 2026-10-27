@@ -1,0 +1,28 @@
+
+version: 2
+
+models:
+  - name: stg_olist_orders
+    description: "Modèle de staging des commandes Olist."
+
+    columns:
+      - name: order_id
+        description: "Identifiant unique de la commande."
+        data_tests:
+          - unique
+          - not_null
+
+      - name: customer_id
+        description: "Identifiant du client associé à la commande."
+        data_tests:
+          - not_null
+
+      - name: order_status
+        description: "Statut de la commande."
+        data_tests:
+          - not_null
+
+      - name: purchased_at
+        description: "Date et heure de création de la commande."
+        data_tests:
+          - not_null
