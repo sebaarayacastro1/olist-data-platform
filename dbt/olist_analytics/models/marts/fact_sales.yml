@@ -1,0 +1,65 @@
+
+version: 2
+
+models:
+  - name: fact_sales
+    description: >
+      Table de faits des ventes Olist.
+      Une ligne par article de commande.
+      Le montant principal correspond au prix hors livraison.
+
+    columns:
+      - name: order_id
+        description: "Identifiant de la commande."
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_olist_orders')
+                field: order_id
+
+      - name: order_item_id
+        description: "Position de l'article dans la commande."
+        data_tests:
+          - not_null
+
+      - name: product_id
+        description: "Clé vers la dimension produit."
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_product')
+                field: product_id
+
+      - name: seller_id
+        description: "Clé vers la dimension vendeur."
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_seller')
+                field: seller_id
+
+      - name: customer_key
+        description: "Clé technique vers la dimension client."
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_customer')
+                field: customer_key
+
+      - name: date_id
+        description: "Clé vers la dimension calendrier."
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_date')
+                field: date_id
+
+      - name: price
+        description: "Prix de l'article hors frais de livraison."
+        data_tests:
+          - not_null

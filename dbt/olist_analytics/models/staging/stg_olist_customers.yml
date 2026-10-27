@@ -1,0 +1,33 @@
+
+version: 2
+
+models:
+  - name: stg_olist_customers
+    description: "Modèle de staging des clients Olist."
+
+    columns:
+      - name: customer_id
+        description: "Identifiant du client associé à une commande."
+        data_tests:
+          - unique
+          - not_null
+
+      - name: customer_unique_id
+        description: "Identifiant du client réel."
+        data_tests:
+          - not_null
+
+      - name: zip_code_prefix
+        description: "Préfixe du code postal du client."
+        data_tests:
+          - not_null
+
+      - name: city
+        description: "Ville du client."
+        data_tests:
+          - not_null
+
+      - name: state
+        description: "État brésilien du client."
+        data_tests:
+          - not_null

@@ -1,0 +1,36 @@
+
+version: 2
+
+models:
+  - name: stg_olist_order_payments
+    description: "Modèle de staging des paiements Olist."
+
+    columns:
+      - name: order_id
+        description: "Identifiant de la commande."
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_olist_orders')
+                field: order_id
+
+      - name: payment_sequential
+        description: "Numéro du paiement dans la commande."
+        data_tests:
+          - not_null
+
+      - name: payment_type
+        description: "Moyen de paiement utilisé."
+        data_tests:
+          - not_null
+
+      - name: payment_installments
+        description: "Nombre de mensualités."
+        data_tests:
+          - not_null
+
+      - name: payment_value
+        description: "Montant du paiement."
+        data_tests:
+          - not_null

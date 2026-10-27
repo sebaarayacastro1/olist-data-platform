@@ -1,0 +1,18 @@
+
+version: 2
+
+seeds:
+  - name: product_categories_fr
+    description: "Traductions françaises des catégories Olist."
+
+    columns:
+      - name: category_name_pt
+        description: "Identifiant original de la catégorie en portugais."
+        data_tests:
+          - unique
+          - not_null
+
+      - name: category_name_fr
+        description: "Nom de la catégorie traduit en français."
+        data_tests:
+          - not_null

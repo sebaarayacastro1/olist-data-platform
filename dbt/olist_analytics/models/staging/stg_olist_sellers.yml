@@ -1,0 +1,28 @@
+
+version: 2
+
+models:
+  - name: stg_olist_sellers
+    description: "Modèle de staging des vendeurs Olist."
+
+    columns:
+      - name: seller_id
+        description: "Identifiant unique du vendeur."
+        data_tests:
+          - unique
+          - not_null
+
+      - name: zip_code_prefix
+        description: "Préfixe du code postal du vendeur."
+        data_tests:
+          - not_null
+
+      - name: city
+        description: "Ville du vendeur."
+        data_tests:
+          - not_null
+
+      - name: state
+        description: "État brésilien du vendeur."
+        data_tests:
+          - not_null

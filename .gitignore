@@ -22,6 +22,9 @@ data/processed/*
 *.csv
 *.parquet
 
+# Autoriser les fichiers CSV de référence dbt
+!dbt/olist_analytics/seeds/*.csv
+
 # IDE
 .vscode/
 .idea/
