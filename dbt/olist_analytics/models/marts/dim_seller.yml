@@ -1,0 +1,26 @@
+
+version: 2
+
+models:
+  - name: dim_seller
+    description: "Dimension des vendeurs et de leur localisation géographique."
+
+    columns:
+      - name: seller_id
+        description: "Identifiant unique du vendeur."
+        data_tests:
+          - unique
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_olist_sellers')
+                field: seller_id
+
+      - name: zip_code_prefix
+        description: "Préfixe du code postal du vendeur."
+
+      - name: city
+        description: "Ville du vendeur."
+
+      - name: state
+        description: "État brésilien du vendeur."
