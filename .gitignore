@@ -2,6 +2,7 @@
 __pycache__/
 *.py[cod]
 *.pyo
+*.pyc
 
 # Virtual environment
 .venv/
@@ -28,3 +29,8 @@ data/processed/*
 # OS
 .DS_Store
 Thumbs.db
+
+# dbt
+target/
+dbt_packages/
+logs/
