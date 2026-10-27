@@ -34,3 +34,13 @@ models:
     staging:
       +materialized: view
       +schema: staging
+
+# Configuration des données de référence
+seeds:
+  olist_analytics:
+    +schema: reference
+    +quote_columns: false
+    product_categories_fr:
+      +column_types:
+        category_name_pt: varchar(150)
+        category_name_fr: varchar(200)
