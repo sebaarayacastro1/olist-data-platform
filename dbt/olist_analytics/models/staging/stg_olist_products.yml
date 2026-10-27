@@ -1,0 +1,37 @@
+
+version: 2
+
+models:
+  - name: stg_olist_products
+    description: "Modèle de staging du catalogue des produits Olist."
+
+    columns:
+      - name: product_id
+        description: "Identifiant unique du produit."
+        data_tests:
+          - unique
+          - not_null
+
+      - name: product_category_name
+        description: "Catégorie originale du produit en portugais."
+
+      - name: product_name_length
+        description: "Longueur du nom du produit."
+
+      - name: product_description_length
+        description: "Longueur de la description du produit."
+
+      - name: product_photos_qty
+        description: "Nombre de photos du produit."
+
+      - name: product_weight_g
+        description: "Poids du produit en grammes."
+
+      - name: product_length_cm
+        description: "Longueur du produit en centimètres."
+
+      - name: product_height_cm
+        description: "Hauteur du produit en centimètres."
+
+      - name: product_width_cm
+        description: "Largeur du produit en centimètres."
