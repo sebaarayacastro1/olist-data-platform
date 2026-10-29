@@ -37,3 +37,6 @@ Thumbs.db
 target/
 dbt_packages/
 logs/
+
+# Fichiers exportés pour Tableau
+/data/tableau/
