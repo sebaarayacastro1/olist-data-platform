@@ -121,7 +121,7 @@ Le dashboard propose :
 
 Le classeur est conservé dans `tableau/olist_dashboard.twbx`. Les données utilisées par Tableau Public sont issues d'un **export**, et non d'une connexion PostgreSQL en temps réel.
 
-[![Tableau de bord des ventes Olist](doc/images/tableau_dashboard.png)]
+![Tableau de bord des ventes Olist](doc/images/tableau_dashboard.png)
 
 ## Reproduire la couche de transformation et l'export
 
