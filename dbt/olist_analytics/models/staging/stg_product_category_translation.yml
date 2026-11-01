@@ -1,0 +1,18 @@
+
+version: 2
+
+models:
+  - name: stg_product_category_translation
+    description: "Traductions des catégories de produits du portugais vers l'anglais."
+
+    columns:
+      - name: category_name_pt
+        description: "Nom original de la catégorie en portugais."
+        data_tests:
+          - unique
+          - not_null
+
+      - name: category_name_en
+        description: "Traduction anglaise de la catégorie."
+        data_tests:
+          - not_null

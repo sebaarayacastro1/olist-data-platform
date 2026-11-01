@@ -1,0 +1,35 @@
+
+version: 2
+
+models:
+  - name: dim_customer
+    description: >
+      Dimension des clients Olist.
+      Une ligne par client réel avec la localisation
+      associée à sa dernière commande observée.
+
+    columns:
+      - name: customer_key
+        description: "Clé technique du client."
+        data_tests:
+          - unique
+          - not_null
+
+      - name: customer_unique_id
+        description: "Identifiant du client réel."
+        data_tests:
+          - unique
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_olist_customers')
+                field: customer_unique_id
+
+      - name: zip_code_prefix
+        description: "Préfixe postal de la dernière commande observée."
+
+      - name: city
+        description: "Ville de la dernière commande observée."
+
+      - name: state
+        description: "État de la dernière commande observée."

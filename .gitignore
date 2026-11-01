@@ -2,6 +2,7 @@
 __pycache__/
 *.py[cod]
 *.pyo
+*.pyc
 
 # Virtual environment
 .venv/
@@ -21,6 +22,9 @@ data/processed/*
 *.csv
 *.parquet
 
+# Autoriser les fichiers CSV de référence dbt
+!dbt/olist_analytics/seeds/*.csv
+
 # IDE
 .vscode/
 .idea/
@@ -28,3 +32,11 @@ data/processed/*
 # OS
 .DS_Store
 Thumbs.db
+
+# dbt
+target/
+dbt_packages/
+logs/
+
+# Fichiers exportés pour Tableau
+/data/tableau/

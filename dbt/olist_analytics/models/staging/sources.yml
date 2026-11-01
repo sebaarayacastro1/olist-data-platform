@@ -1,0 +1,64 @@
+
+version: 2
+
+sources:
+  - name: raw
+    description: "Données brutes Olist chargées dans Supabase."
+    schema: raw
+
+    tables:
+      - name: olist_orders
+        description: "Commandes des clients."
+        columns:
+          - name: order_id
+            data_tests:
+              - unique
+              - not_null
+
+      - name: olist_order_items
+        description: "Articles associés aux commandes."
+        columns:
+          - name: order_id
+            data_tests:
+              - not_null
+          - name: order_item_id
+            data_tests:
+              - not_null
+
+      - name: olist_order_payments
+        description: "Paiements des commandes."
+        columns:
+          - name: order_id
+            data_tests:
+              - not_null
+          - name: payment_sequential
+            data_tests:
+              - not_null
+
+      - name: olist_order_reviews
+        description: "Avis des clients sur les commandes."
+
+      - name: olist_customers
+        description: "Informations des clients."
+        columns:
+          - name: customer_id
+            data_tests:
+              - unique
+              - not_null
+
+      - name: olist_products
+        description: "Catalogue des produits."
+        columns:
+          - name: product_id
+            data_tests:
+              - unique
+              - not_null
+
+      - name: olist_sellers
+        description: "Informations des vendeurs."
+
+      - name: olist_geolocation
+        description: "Données géographiques et codes postaux."
+
+      - name: product_category_name_translation
+        description: "Traductions des catégories du portugais vers l'anglais."

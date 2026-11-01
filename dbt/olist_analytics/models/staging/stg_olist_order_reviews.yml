@@ -1,0 +1,36 @@
+
+version: 2
+
+models:
+  - name: stg_olist_order_reviews
+    description: "Modèle de staging des avis clients Olist."
+
+    columns:
+      - name: review_row_id
+        description: "Identifiant technique unique de chaque ligne."
+        data_tests:
+          - unique
+          - not_null
+
+      - name: review_id
+        description: "Identifiant original de l'avis."
+        data_tests:
+          - not_null
+
+      - name: order_id
+        description: "Identifiant de la commande associée."
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_olist_orders')
+                field: order_id
+
+      - name: review_score
+        description: "Note attribuée par le client, de 1 à 5."
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [1, 2, 3, 4, 5]
+                quote: false

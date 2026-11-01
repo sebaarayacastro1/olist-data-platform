@@ -1,0 +1,28 @@
+
+version: 2
+
+models:
+  - name: stg_olist_geolocation
+    description: "Modèle de staging des données géographiques Olist."
+
+    columns:
+      - name: geolocation_row_id
+        description: "Identifiant technique unique de chaque ligne."
+        data_tests:
+          - unique
+          - not_null
+
+      - name: zip_code_prefix
+        description: "Préfixe du code postal brésilien."
+
+      - name: latitude
+        description: "Latitude géographique."
+
+      - name: longitude
+        description: "Longitude géographique."
+
+      - name: city
+        description: "Ville associée au code postal."
+
+      - name: state
+        description: "État brésilien."
